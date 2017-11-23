@@ -18,6 +18,8 @@ class Autoloader {
         $dirs = array(
             'Configuration/',
             'Controleur/', 
+            'Outils/', 
+            'Modele/', 
         );
        foreach( $dirs as $dir ) {
             if (file_exists($dir.strtolower($class).'.php')) {

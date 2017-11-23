@@ -11,7 +11,7 @@ class Routage {
 		$routes = array (
 		    $siteName.'/' => array ('AccueilControleur', "IndexAction"),
 		    $siteName.'/Page1' => array ('AccueilControleur', "Page1Action"),
-		    $siteName.'/Page2' => array ('AccueilControleur', "Page2Action")
+		    $siteName.'/Page2/{id}/{id2}' => array ('AccueilControleur', "Page2Action")
 
 		);
 
