@@ -3,9 +3,11 @@
 class AccueilControleur {
 
 	public function IndexAction() {
-			$p = new PersonneDAO;
-			$tabTest = $p->getAll();
-			$tabTest2 = $p->getOneByName("Chatellier");
+			$personnes = new Personne;
+			$tabTest = $personnes->find();
+
+			$voiture = new VoitureAutreNomBDD;
+			$voitures = $voiture->find();
 			
 			require_once 'Vue/AccueilVue.php';
 	}

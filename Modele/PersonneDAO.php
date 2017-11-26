@@ -1,14 +1,14 @@
 <?php
 
-class PersonneDAO {
+/*class PersonneDAO extends Fonctions {
+
+	function nomTable() {
+		return "";	
+	} 
 
 	function getAll() {	
-		
-		foreach ( ConnexionBDD::getInstance()->query('SELECT * FROM PERSONNE') as $personne)	{
-  			$personnes[] = $personne[1];	
-		}
-
-		return $personnes;
+		return $this->find();
+		//return $this->findById(1);
 	}
 
 
@@ -27,4 +27,4 @@ class PersonneDAO {
 
 		return $personne;
 	}
-}
+}*/

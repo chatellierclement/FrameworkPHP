@@ -10,13 +10,17 @@
   Accueil
 
   <?php
-  		foreach ($tabTest as $a) {
-  			echo Securite::html($a);
+  		foreach ($tabTest as $personne) {
+  			echo Securite::html($personne->getNom()) . "<br>";
   		}
 
-      echo '--------';
+      echo '<br>--------';
 
-      echo Securite::html($tabTest2);
+      foreach ($voitures as $voiture) {
+        echo Securite::html($voiture->getImmat()). "<br>";
+      }
+
+      //echo Securite::html($tabTest2);
   ?>
 
 </body>
