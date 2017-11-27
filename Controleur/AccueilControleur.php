@@ -6,8 +6,13 @@ class AccueilControleur {
 			$personnes = new Personne;
 			$tabTest = $personnes->find();
 
-			$voiture = new VoitureAutreNomBDD;
-			$voitures = $voiture->find();
+			$personne = $personnes->findById(1);
+			ini_set('xdebug.var_display_max_depth', -1);
+			ini_set('xdebug.var_display_max_children', -1);
+			ini_set('xdebug.var_display_max_data', -1);
+			var_dump($personne);
+			/*$voiture = new VoitureAutreNomBDD;
+			$voitures = $voiture->find();*/
 			
 			require_once 'Vue/AccueilVue.php';
 	}

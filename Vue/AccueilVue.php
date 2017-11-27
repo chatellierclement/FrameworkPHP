@@ -10,15 +10,18 @@
   Accueil
 
   <?php
-  		foreach ($tabTest as $personne) {
+  		//foreach ($tabTest as $personne) {
   			echo Securite::html($personne->getNom()) . "<br>";
-  		}
+        echo Securite::html($personne->getAdresse()->getVille()) . "<br>";
+        echo Securite::html($personne->getAdresse()->getParking()->getLieu()) . "<br>";
+        echo Securite::html($personne->getAdresse()->getParking()->getVoiture()->getImmat()) . "<br>";
+  	//	}
 
       echo '<br>--------';
 
-      foreach ($voitures as $voiture) {
+    /*  foreach ($voitures as $voiture) {
         echo Securite::html($voiture->getImmat()). "<br>";
-      }
+      }*/
 
       //echo Securite::html($tabTest2);
   ?>
