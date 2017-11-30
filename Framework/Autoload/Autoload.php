@@ -16,10 +16,14 @@ class Autoloader {
      */
     static function autoload($class){
         $dirs = array(
-            'Configuration/',
-            'Controleur/', 
-            'Outils/', 
-            'Modele/', 
+            './Framework/',
+            './Framework/Commun/',
+            './Framework/Database/', 
+            './Framework/Routing/', 
+            './Framework/Security/',             
+            './ModuleTest/Configuration/',        
+            './ModuleTest/Controleur/',       
+            './ModuleTest/Modele/',       
         );
        foreach( $dirs as $dir ) {
             if (file_exists($dir.strtolower($class).'.php')) {

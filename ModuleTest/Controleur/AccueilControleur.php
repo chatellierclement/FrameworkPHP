@@ -14,7 +14,7 @@ class AccueilControleur {
 			/*$voiture = new VoitureAutreNomBDD;
 			$voitures = $voiture->find();*/
 			
-			require_once 'Vue/AccueilVue.php';
+			require_once './ModuleTest/Vue/AccueilVue.php';
 	}
 
 	public function Page1Action() {

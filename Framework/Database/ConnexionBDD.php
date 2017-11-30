@@ -19,7 +19,7 @@ class ConnexionBDD {
 
  	private function init() {
  		try {
-			$ini_array = parse_ini_file("propertiesBDD.ini");
+			$ini_array = parse_ini_file("ModuleTest\Configuration\propertiesBDD.ini");
 
 	    	$this->PDOInstance =  new PDO('mysql:host='.$ini_array["server"].';dbname='.$ini_array["bdd"].';charset=utf8', $ini_array["user"], $ini_array["password"]);
 	    } catch (Exception $e) {

@@ -1,9 +1,10 @@
 <?php
 
-require 'Configuration\autoload.php'; 
+//chargement des classes
+require_once './Framework/Autoload\Autoload.php'; 
 Autoloader::register(); 
 
-$redirection = new Redirection;
-$routes = $redirection->redirect();
+$app = new App(new Routage);
+$app->run();
 
 

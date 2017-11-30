@@ -1,18 +1,23 @@
 <?php
 
-class Redirection {
+class App {
 	
-	public function redirect() {
+	private $router;
+
+	public function __construct ($router) {
+		$this->router = $router;
+	}
+
+	public function run() {
 		
-		$routage = new Routage;
-		$routes = $routage->getRoutes();
+		$routes = $this->router->get();
 
 		$urlServeur = explode("/", $_SERVER["REQUEST_URI"]);
 		$param = array();
-			
-		foreach ($routes as $key => $route) {
 
-			$urlSansParamTab = explode("/", $key);
+		foreach ($routes as $route) {
+
+			$urlSansParamTab = explode("/", $route->getUrl());
 
 			if (count($urlServeur) == count($urlSansParamTab)) {
 				$verif = true;
@@ -27,8 +32,9 @@ class Redirection {
 					}
 				}	
 				if ($verif) {
-					$class = new $route[0](); 
-					return call_user_func_array(array($class, $route[1]), $param);		
+					$controller = $route->getController();
+					$class = new $controller(); 
+					return call_user_func_array(array($class, $route->getMethod()), $param);		
 				}
 			}	
 		} 
